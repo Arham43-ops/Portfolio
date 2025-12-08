@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Canvas } from '@react-three/fiber';
 import FloatingCodeEditor from '../3d/FloatingCube';
 import Button from '../ui/Button';
+import { HERO_DATA } from '../../data';
 import './Hero.css';
 
 const Hero = () => {
@@ -55,14 +56,13 @@ const Hero = () => {
                     transition={{ duration: 0.8 }}
                 >
                     <span className="hero-greeting">Hello, I'm</span>
-                    <h1 className="hero-name">Your Name</h1>
+                    <h1 className="hero-name">{HERO_DATA.name}</h1>
                     <h2 className="hero-title">
                         <span className="typing-text">{text}</span>
                         <span className="cursor-blink">|</span>
                     </h2>
                     <p className="hero-description">
-                        Creative Developer & 3D Enthusiast crafting immersive digital experiences
-                        with modern web technologies and stunning visual design.
+                        {HERO_DATA.subheading}
                     </p>
                     <div className="hero-buttons">
                         <Button variant="primary" href="#projects">

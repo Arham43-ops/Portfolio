@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
+import { ABOUT_DATA } from '../../data';
 import './About.css';
 
 const StatCard = ({ value, label }) => {
@@ -85,22 +86,15 @@ const About = () => {
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
                     >
-                        <h3>Passionate Developer with a Creative Vision</h3>
-                        <p>
-                            I'm a full-stack developer specializing in creating immersive web experiences
-                            that combine cutting-edge technology with stunning visual design. With expertise
-                            in modern web technologies and 3D graphics, I transform ideas into interactive realities.
-                        </p>
-                        <p>
-                            My journey in web development has been driven by a passion for innovation and a
-                            commitment to excellence. I believe in crafting solutions that not only meet
-                            technical requirements but also deliver exceptional user experiences.
-                        </p>
+                        <h3>{ABOUT_DATA.subtitle}</h3>
+                        {ABOUT_DATA.bio.map((paragraph, index) => (
+                            <p key={index}>{paragraph}</p>
+                        ))}
 
                         <div className="about-stats">
-                            <StatCard value={50} label="Projects Completed" />
-                            <StatCard value={30} label="Happy Clients" />
-                            <StatCard value={5} label="Years Experience" />
+                            {ABOUT_DATA.stats.map((stat, index) => (
+                                <StatCard key={index} value={stat.value} label={stat.label} />
+                            ))}
                         </div>
                     </motion.div>
                 </div>
