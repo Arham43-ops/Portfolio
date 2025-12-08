@@ -1,0 +1,39 @@
+.cursor-dot,
+.cursor-follower {
+    position: fixed;
+    pointer-events: none;
+    z-index: var(--z-cursor);
+    border-radius: 50%;
+    mix-blend-mode: difference;
+}
+
+.cursor-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--primary-400);
+    transform: translate(-50%, -50%);
+    opacity: 0.9;
+}
+
+.cursor-follower {
+    width: 32px;
+    height: 32px;
+    border: 1.5px solid var(--primary-400);
+    background: transparent;
+    transform: translate(-50%, -50%);
+    opacity: 0.4;
+}
+
+/* Hide default cursor on desktop */
+@media (min-width: 768px) {
+    * {
+        cursor: none !important;
+    }
+
+    a,
+    button,
+    input,
+    textarea {
+        cursor: none !important;
+    }
+}
