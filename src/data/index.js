@@ -18,8 +18,62 @@ export const ABOUT_DATA = {
     ]
 };
 
+import stoceasyImg from '../assets/projects/stoceasy.png';
+import aivaImg from '../assets/projects/aiva.png';
+import resumeiqImg from '../assets/projects/resumeiq.png';
+import flipkartImg from '../assets/projects/flipkart.png';
+import domainImg from '../assets/projects/domain.png';
+import portfolioImg from '../assets/projects/portfolio.png';
+
 export const PROJECTS_DATA = [
-    // Placeholders for now
+    {
+        id: 1,
+        title: "StocEasy",
+        description: "An advanced Online Stock Exchange Platform that provides real-time stock data and trading capabilities. Features a dynamic dashboard with live charts, portfolio management, and secure transaction handling.",
+        tech: ["Python", "Django", "Streamlit", "Redis", "MySQL"],
+        img: stoceasyImg,
+        link: "https://github.com/Arham43-ops/StockEasy"
+    },
+    {
+        id: 2,
+        title: "A.I.V.A Chatbot",
+        description: "A sophisticated AI-powered chatbot designed for intelligent interactions. It leverages natural language processing to understand user queries and provide accurate, context-aware responses in real-time.",
+        tech: ["Python", "Django", "MySQL"],
+        img: aivaImg,
+        link: "https://github.com/Arham43-ops/aiva_chatbot"
+    },
+    {
+        id: 3,
+        title: "ResumeIQ",
+        description: "An intelligent Resume Analyzer and Builder that uses AI to evaluate resumes against job descriptions. It offers actionable insights and optimization suggestions to help users land their dream jobs.",
+        tech: ["Streamlit", "AI", "Gemini API", "Job Search"],
+        img: resumeiqImg,
+        link: "https://github.com/Arham43-ops/ResumeIQ"
+    },
+    {
+        id: 4,
+        title: "Flipkart Clone",
+        description: "A fully functional e-commerce application replicating the core features of Flipkart. Includes product browsing, search functionality, cart management, and a seamless checkout process.",
+        tech: ["Django", "Python", "SQLite3"],
+        img: flipkartImg,
+        link: "https://github.com/Arham43-ops/Flipkart_Clone"
+    },
+    {
+        id: 5,
+        title: "Domain Management System",
+        description: "A robust Java GUI application for managing web domains. It streamlines the process of registering, renewing, and tracking domain names with a user-friendly interface and secure database integration.",
+        tech: ["Java GUI", "MySQL"],
+        img: domainImg,
+        link: "https://github.com/Arham43-ops/Domain-Management-System"
+    },
+    {
+        id: 6,
+        title: "3D Interactive Portfolio",
+        description: "A cutting-edge personal portfolio website featuring immersive 3D graphics and animations. It showcases projects and skills in a visually stunning, interactive 3D environment.",
+        tech: ["React", "Node.js", "Three.js", "Vite"],
+        img: portfolioImg,
+        link: "https://github.com/Arham43-ops/Portfolio"
+    }
 ];
 
 export const SKILLS_DATA = [

@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import './ProjectCard.css';
 
-const ProjectCard = ({ icon, title, description, tags, link }) => {
+const ProjectCard = ({ icon, title, description, tags, link, img }) => {
     return (
         <motion.div
             className="project-card"
@@ -10,9 +10,13 @@ const ProjectCard = ({ icon, title, description, tags, link }) => {
             transition={{ duration: 0.3 }}
         >
             <div className="project-image">
-                <div className="project-icon-wrapper">
-                    {icon}
-                </div>
+                {img ? (
+                    <img src={img} alt={title} className="project-thumbnail" />
+                ) : (
+                    <div className="project-icon-wrapper">
+                        {icon}
+                    </div>
+                )}
                 <motion.div
                     className="project-overlay"
                     initial={{ opacity: 0 }}

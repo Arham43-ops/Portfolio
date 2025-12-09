@@ -58,19 +58,11 @@ const About = () => {
                     >
                         <div className="image-wrapper">
                             <div className="image-placeholder">
-                                <svg
-                                    width="80"
-                                    height="80"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    strokeWidth="1.5"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                >
-                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                                    <circle cx="12" cy="7" r="4" />
-                                </svg>
+                                <img 
+                                    src="/img.jpg" 
+                                    alt="Profile" 
+                                    style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '20px' }} 
+                                />
                             </div>
                             <div className="image-float float-1"></div>
                             <div className="image-float float-2"></div>
