@@ -1,10 +1,12 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
+import emailjs from '@emailjs/browser';
 import Button from '../ui/Button';
 import { CONTACT_DATA } from '../../data';
 import './Contact.css';
 
 const Contact = () => {
+    const form = useRef();
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -21,17 +23,26 @@ const Contact = () => {
         });
     };
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
         setStatus('sending');
 
-        // Simulate form submission (replace with actual API call)
-        setTimeout(() => {
-            setStatus('success');
-            setFormData({ name: '', email: '', subject: '', message: '' });
+        // REPLACE THESE WITH YOUR ACTUAL EMAILJS SERVICE ID, TEMPLATE ID, AND PUBLIC KEY
+        const SERVICE_ID = 'service_ef79wno';
+        const TEMPLATE_ID = 'template_0owayas';
+        const PUBLIC_KEY = 'THhTP5fsTdKDGV0oN';
 
-            setTimeout(() => setStatus(''), 3000);
-        }, 1000);
+        emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_KEY)
+            .then((result) => {
+                console.log(result.text);
+                setStatus('success');
+                setFormData({ name: '', email: '', subject: '', message: '' });
+                setTimeout(() => setStatus(''), 3000);
+            }, (error) => {
+                console.log(error.text);
+                setStatus('error');
+                setTimeout(() => setStatus(''), 3000);
+            });
     };
 
     return (
@@ -139,7 +150,7 @@ const Contact = () => {
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
                     >
-                        <form className="contact-form" onSubmit={handleSubmit}>
+                        <form className="contact-form" ref={form} onSubmit={handleSubmit}>
                             <div className="form-group">
                                 <input
                                     type="text"
