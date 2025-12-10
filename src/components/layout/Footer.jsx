@@ -5,7 +5,7 @@ const Footer = () => {
         <footer className="footer">
             <div className="container">
                 <div className="footer-content">
-                    <p>&copy; {new Date().getFullYear()} Your Name. All rights reserved.</p>
+                    <p>&copy; 2025 Arham Topiwala. All rights reserved.</p>
                     <p>
                         Designed & Built with{' '}
                         <span className="heart">
